@@ -5,12 +5,13 @@
   "main": "server.js",
   "author": "Lifei && Molly",
   "dependencies": {
-    "express": "3.x",
     "body-parser": "*",
-    "method-override": "*",
-    "angular-ui-router": "*",
-    "jwt-simple": "*",
     "cookie-parser": "*",
+    "errorhandler": "*",
+    "express": "*",
+    "jwt-simple": "*",
+    "method-override": "*",
+    "morgan": "*",
     "passport": "*",
     "passport-google-oauth": "*",
     "socket.io": "*"

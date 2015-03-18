@@ -1,16 +1,15 @@
-var app = require('express')()
-    , server = require('http').createServer(app)
-    , io = require('socket.io').listen(server);
+//Basic settings
+var express = require("express");
+var path = require("path");
+var app = express();
+var server = require("http").createServer(app);
+var io = require("socket.io").listen(server);
+var methodOverride = require("method-override");
+var morgan = require("morgan");
+var bodyParser = require("body-parser");
+var errorHandler = require("errorhandler");
 
-server.listen(80);
+//Set up log level
+io.set("log level", 1);
 
-app.get('/', function (req, res) {
-    res.sendfile(__dirname + '/index.html');
-});
-
-io.sockets.on('connection', function (socket) {
-    socket.emit('news', { hello: 'world' });
-    socket.on('my other event', function (data) {
-        console.log(data);
-    });
-});
+//Listen to Web Socket Connection
