@@ -5,7 +5,7 @@
   "main": "server.js",
   "author": "Lifei && Molly",
   "dependencies": {
-    "express": "*",
+    "express": "3.x",
     "body-parser": "*",
     "method-override": "*",
     "angular-ui-router": "*",
