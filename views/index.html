@@ -2,18 +2,34 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>UChat!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" type="text/css" href="vendors/bootstrap-3.3.4-dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="style/main.css">
+    <title>UChat!</title>
     <script src="vendors/jquery-1.11.2.js"></script>
     <script src="vendors/socket.io.js"></script>
     <script src="scripts/chat.js"></script>
 </head>
 <body>
-<h1>UChat!</h1>
-<div>
-    <span id="status">Connecting, please wait...</span>
-    <input type="text" id="input"/>
+<header>
+    <div class="banner">
+        UChat!
+    </div>
+</header>
+<div class="placeHolder">
+
 </div>
-<div id="content"></div>
+<div class="contentArea">
+    <div id="content"></div>
+    <div>
+        <span id="status">Connecting, please wait...</span>
+        <input type="text" id="input"/>
+    </div>
+</div>
 </body>
 </html>

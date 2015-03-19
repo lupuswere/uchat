@@ -16,18 +16,20 @@ $(function () {
         if (json.type === "welcome") {
             if (myName === json.text) {
                 status.text(myName + ": ").css("color", json.color);
-                p = '<p style="background:' + json.color + '">system  @ ' + json.time + ' : Welcome ' + json.text + '</p>';
+                p = '<p style="background:' + json.color + '">UChat ' + json.time + ' : ' + json.text + ' joined chat.</p>';
             } else if (json.type === "disconnect") {
-                p = '<p style="background:' + json.color + '">system  @ ' + json.time + ' : Bye ' + json.text + '</p>';
+                p = '<p style="background:' + json.color + '">UChat ' + json.time + ' : ' + json.text + ' left chat.</p>';
             }
-            content.prepend(p);
+            content.append(p);
+            $("#content").animate( { scrollTop: $(document).height() }, "slow");
         }
     });
 
     //Listen to message event
     socket.on("message", function (json) {
-        var p = '<p><span style="color:' + json.color + ';">' + json.author + '</span> @ ' + json.time + ' : ' + json.text + '</p>';
-        content.prepend(p);
+        var p = '<p><span style="color:' + json.color + ';">' + json.author + '</span> ' + json.time + ' : ' + json.text + '</p>';
+        content.append(p);
+        $("#content").animate( { scrollTop: $(document).height() }, "fast");
     });
 
     //Submit message via enter
