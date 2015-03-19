@@ -14,7 +14,8 @@
     "morgan": "*",
     "passport": "*",
     "passport-google-oauth": "*",
-    "socket.io": "*"
+    "socket.io": "*",
+    "angularjs-scroll-glue": "*"
   },
   "subdomain": "uchat",
   "scripts": {

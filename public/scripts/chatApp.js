@@ -1,11 +1,12 @@
-var app = angular.module("uchat", []);
+var app = angular.module("uchat", ["luegg.directives"]);
 app.controller("mainCtrl", function mainCtrl ($scope, $http) {
     $scope.status = "";
     $scope.messages = [];
     $scope.myName = false;
     $scope.preMessage = {};
     //Build Web Socket connection
-    socket = io.connect("http://localhost");
+    socket = io.connect("http://localhost"); //Local Development
+    //socket = io.connect("http://uchat.jit.su");
     //Confirm connection
     socket.on("open", function () {
         $scope.status = "Name:";
@@ -30,7 +31,7 @@ app.controller("mainCtrl", function mainCtrl ($scope, $http) {
         $scope.$apply();
     });
 
-    //Submit message via enter
+    //Submit message via send button
     $scope.sendMessage = function () {
         var msg = $scope.preMessage.text;
         if(msg) {
@@ -40,9 +41,11 @@ app.controller("mainCtrl", function mainCtrl ($scope, $http) {
                 $scope.myName = msg;
             }
         }
+        $scope.glued = !$scope.glued;
         $scope.$apply();
     };
 
+    //Submit message via enter
     $scope.sendMessageByEnter = function (keyEvent) {
         if (keyEvent.which === 13) {
             $scope.sendMessage();

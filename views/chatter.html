@@ -12,6 +12,7 @@
     <title>UChat!</title>
     <script src="vendors/angular.js"></script>
     <script src="vendors/socket.io.js"></script>
+    <script src="https://cdn.rawgit.com/Luegg/angularjs-scroll-glue/v2.0.4/src/scrollglue.js"></script>
     <script src="scripts/chatApp.js"></script>
 </head>
 <body ng-controller="mainCtrl">
@@ -24,7 +25,7 @@
 
 </div>
 <div class="contentArea">
-    <div id="content">
+    <div id="content" scroll-glue="glued">
         <p ng-repeat="message in messages track by $index">{{message}}</p>
     </div>
     <div>
