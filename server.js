@@ -79,7 +79,8 @@ if ("development" === app.get("env")) {
 
 //The html file of Web Socket
 app.get("/", function (req, res) {
-    res.sendfile("views/index.html");
+    res.sendfile("views/chatter.html");
+    //res.sendfile("views/index.html"); //If use jQuery
 });
 
 server.listen(app.get("port"), function () {

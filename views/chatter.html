@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="uchat">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport"
+          content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" type="text/css" href="style/main.css">
+    <title>UChat!</title>
+    <script src="vendors/angular.js"></script>
+    <script src="vendors/socket.io.js"></script>
+    <script src="scripts/chatApp.js"></script>
+</head>
+<body ng-controller="mainCtrl">
+<header>
+    <div class="banner">
+        UChat!
+    </div>
+</header>
+<div class="placeHolder">
+
+</div>
+<div class="contentArea">
+    <div id="content">
+        <p ng-repeat="message in messages track by $index">{{message}}</p>
+    </div>
+    <div>
+        <span id="status">{{status}}</span>
+        <input type="text" id="input" ng-keypress="sendMessageByEnter($event)" ng-model="preMessage.text"/>
+    </div>
+    <div ng-click="sendMessage()">
+        Send
+    </div>
+</div>
+</body>
+</html>
