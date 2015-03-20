@@ -45,3 +45,44 @@ body {
     background-color: rgba(0,0,0,.5);
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
+/* iPhone 4 and 4S */
+@media screen and (device-aspect-ratio: 2/3) {
+    .contentArea {
+        margin-top: 30px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+/* iPhone 5 */
+@media screen and (device-aspect-ratio: 40/71) {
+    .contentArea {
+        margin-top: 30px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+/* iPhone 6 */
+@media screen and (device-aspect-ratio: 667/375) {
+    .contentArea {
+        margin-top: 30px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+/* iPhone 6 Plus */
+@media screen and (device-aspect-ratio: 16/9) {
+    .contentArea {
+        margin-top: 30px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+}
+/* iPad */
+
+@media screen and (device-aspect-ratio: 3/4) {
+
+}
