@@ -8,6 +8,7 @@
     <meta name="MobileOptimized" content="320">
     <meta name="viewport"
           content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" type="text/css" href="vendors/bootstrap-3.3.4-dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="style/main.css">
     <title>UChat!</title>
     <script src="vendors/angular.js"></script>
@@ -25,15 +26,16 @@
 
 </div>
 <div class="contentArea">
-    <div id="content" scroll-glue="glued">
-        <p ng-repeat="message in messages track by $index">{{message}}</p>
+    <div class="list-group" id="content" scroll-glue="glued">
+        <p class="list-group-item" ng-repeat="message in messages track by $index">{{message}}</p>
     </div>
-    <div>
-        <span id="status">{{status}}</span>
-        <input type="text" id="input" ng-keypress="sendMessageByEnter($event)" ng-model="preMessage.text"/>
-    </div>
-    <div ng-click="sendMessage()">
-        Send
+    <div class="input-group">
+        <span class="input-group-addon">{{status}}</span>
+        <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1" ng-if="!myName" ng-keypress="sendMessageByEnter($event)" ng-model="preMessage.text">
+        <input type="text" class="form-control" placeholder="Message here..." aria-describedby="basic-addon1" ng-if="myName" ng-keypress="sendMessageByEnter($event)" ng-model="preMessage.text">
+        <!--<button type="button" class="btn btn-default" ng-click="sendMessage()">-->
+            <!--Send-->
+        <!--</button>-->
     </div>
 </div>
 </body>

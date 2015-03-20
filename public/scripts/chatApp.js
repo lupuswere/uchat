@@ -41,7 +41,7 @@ app.controller("mainCtrl", function mainCtrl ($scope, $http) {
                 $scope.myName = msg;
             }
         }
-        $scope.glued = !$scope.glued;
+        $scope.glued = true;
         $scope.$apply();
     };
 
